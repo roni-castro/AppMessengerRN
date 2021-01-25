@@ -1,7 +1,8 @@
 import React from 'react';
-import {View, FlatList} from 'react-native';
-import {H1} from '../../components/Typography';
+import {FlatList} from 'react-native';
+import {Header} from '../../components/Header';
 import MessageCard from '../../components/MessageCard';
+import {Container} from './styles';
 
 const messages = [
   {
@@ -88,14 +89,14 @@ const messages = [
 
 const Home = () => {
   return (
-    <View>
-      <H1>Messages</H1>
+    <Container>
+      <Header title="Messages" />
       <FlatList
         data={messages}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({item}) => <MessageCard item={item} />}
       />
-    </View>
+    </Container>
   );
 };
 
