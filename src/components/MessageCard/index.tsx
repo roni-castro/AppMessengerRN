@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import Divider from '../Divider';
 import {H2, ParagraphLight, ParagraphNormal} from '../Typography';
-import {IMessageData} from '../models/messages';
+import {IMessageData} from '../../models/messages';
 import {Container, TitleContainer} from './styles';
 
 interface IMessageCardProps {
