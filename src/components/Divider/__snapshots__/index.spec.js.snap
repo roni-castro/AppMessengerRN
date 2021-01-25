@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit | Divider renders the component correctly and with the default style 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#c3c4c4",
+      "borderBottomWidth": 1,
+      "marginVertical": 10,
+    }
+  }
+/>
+`;
