@@ -16,7 +16,7 @@ export const RootNavigator = () => {
       <Stack.Screen
         name="detail"
         component={MessageDetail}
-        options={{headerShown: false}}
+        options={{title: 'Message Detail'}}
       />
     </Stack.Navigator>
   );
