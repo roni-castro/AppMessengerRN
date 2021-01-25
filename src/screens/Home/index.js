@@ -1,13 +1,7 @@
 import React from 'react';
-import {View, FlatList, SafeAreaView} from 'react-native';
-import moment from 'moment';
-import {
-  H1,
-  H2,
-  ParagraphNormal,
-  ParagraphLight,
-} from '../../components/Typography';
-import Divider from '../../components/Divider';
+import {View, FlatList} from 'react-native';
+import {H1} from '../../components/Typography';
+import MessageCard from '../../components/MessageCard';
 
 const messages = [
   {
@@ -99,18 +93,7 @@ const Home = () => {
       <FlatList
         data={messages}
         keyExtractor={(item) => item.id.toString()}
-        renderItem={({item}) => (
-          <View>
-            <H2>{item.subject}</H2>
-            <ParagraphLight>
-              {moment(new Date(item.timestamp) * 1000).fromNow()}
-            </ParagraphLight>
-            <ParagraphNormal numberOfLines={2} ellipsizeMode="tail">
-              {item.detail}
-            </ParagraphNormal>
-            <Divider />
-          </View>
-        )}
+        renderItem={({item}) => <MessageCard item={item} />}
       />
     </View>
   );
