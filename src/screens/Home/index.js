@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, FlatList} from 'react-native';
+import {View, FlatList, SafeAreaView} from 'react-native';
 import moment from 'moment';
 import {
   H1,
@@ -7,6 +7,7 @@ import {
   ParagraphNormal,
   ParagraphLight,
 } from '../../components/Typography';
+import Divider from '../../components/Divider';
 
 const messages = [
   {
@@ -107,13 +108,7 @@ const Home = () => {
             <ParagraphNormal numberOfLines={2} ellipsizeMode="tail">
               {item.detail}
             </ParagraphNormal>
-            <View
-              style={{
-                borderBottomWidth: 1,
-                backgroundColor: '#ccc',
-                marginVertical: 10,
-              }}
-            />
+            <Divider />
           </View>
         )}
       />
