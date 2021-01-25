@@ -11,7 +11,9 @@ interface IMessageCardProps {
 }
 
 const MessageCard = ({item, onMessagePress}: IMessageCardProps) => (
-  <Container onPress={() => onMessagePress(item)}>
+  <Container
+    testID="message-card-container"
+    onPress={() => onMessagePress(item)}>
     <TitleContainer>
       <H2 style={{width: '70%'}} numberOfLines={1} ellipsizeMode="tail">
         {item.subject}
