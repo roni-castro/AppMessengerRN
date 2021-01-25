@@ -7,10 +7,11 @@ import {Container, TitleContainer} from './styles';
 
 interface IMessageCardProps {
   item: IMessageData;
+  onMessagePress: (item: IMessageData) => void;
 }
 
-const MessageCard = ({item}: IMessageCardProps) => (
-  <Container onPress={() => console.warn(`clickou ${item.id}`)}>
+const MessageCard = ({item, onMessagePress}: IMessageCardProps) => (
+  <Container onPress={() => onMessagePress(item)}>
     <TitleContainer>
       <H2 style={{width: '70%'}} numberOfLines={1} ellipsizeMode="tail">
         {item.subject}

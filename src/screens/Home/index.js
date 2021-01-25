@@ -87,14 +87,19 @@ const messages = [
   },
 ];
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <Container>
       <Header title="Messages" />
       <FlatList
         data={messages}
         keyExtractor={(item) => item.id.toString()}
-        renderItem={({item}) => <MessageCard item={item} />}
+        renderItem={({item}) => (
+          <MessageCard
+            item={item}
+            onMessagePress={() => navigation.navigate('detail', {item})}
+          />
+        )}
       />
     </Container>
   );
