@@ -1,6 +1,12 @@
 import React from 'react';
-import {View, Text, FlatList} from 'react-native';
+import {View, FlatList} from 'react-native';
 import moment from 'moment';
+import {
+  H1,
+  H2,
+  ParagraphNormal,
+  ParagraphLight,
+} from '../../components/Typography';
 
 const messages = [
   {
@@ -88,15 +94,19 @@ const messages = [
 const Home = () => {
   return (
     <View>
-      <Text>Messages</Text>
+      <H1>Messages</H1>
       <FlatList
         data={messages}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={({item}) => (
           <View>
-            <Text>{item.subject}</Text>
-            <Text>{moment(new Date(item.timestamp) * 1000).fromNow()}</Text>
-            <Text>{item.detail}</Text>
+            <H2>{item.subject}</H2>
+            <ParagraphLight>
+              {moment(new Date(item.timestamp) * 1000).fromNow()}
+            </ParagraphLight>
+            <ParagraphNormal numberOfLines={2} ellipsizeMode="tail">
+              {item.detail}
+            </ParagraphNormal>
             <View
               style={{
                 borderBottomWidth: 1,
